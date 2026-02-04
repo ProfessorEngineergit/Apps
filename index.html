@@ -3,87 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mac Apps - Download Latest Apps</title>
+    <title>Mac Apps - Premium macOS Applications</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
     <header>
         <nav>
-            <h1>Mac Apps</h1>
+            <div class="logo">
+                <div class="logo-icon">◆</div>
+                <h1>Mac Apps</h1>
+            </div>
             <ul>
                 <li><a href="#apps">Apps</a></li>
+                <li><a href="#features">Features</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#coffee" class="coffee-link">☕ Buy Me a Coffee</a></li>
+                <li><a href="#coffee" class="coffee-link">☕ Support</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <div class="container">
-                <h2>Download My Latest Mac Apps</h2>
-                <p>Quality applications built for macOS</p>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">✨</span>
+                    <span>Open Source • Free Download</span>
+                </div>
+                <h2>Powerful Mac Apps.<br><span class="gradient-text">Beautifully Crafted.</span></h2>
+                <p class="hero-subtitle">Transform your macOS experience with intelligent tools that work seamlessly in the background. Rendering tracking, file management, and AI-powered screenshots.</p>
+                <div class="hero-cta">
+                    <a href="#apps" class="cta-primary">
+                        <span>Explore Apps</span>
+                        <span class="cta-arrow">→</span>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="cta-secondary">
+                        <span class="github-icon">⬡</span>
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Apps</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Open Source</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">Free</span>
+                        <span class="stat-label">or $2.99</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">◐</div>
+                    <span>RenderStatus</span>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">⬢</div>
+                    <span>SuffixLinkr</span>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">◈</div>
+                    <span>ShotNamrAI</span>
+                </div>
+                <div class="hero-ring"></div>
+                <div class="hero-ring ring-2"></div>
+                <div class="hero-ring ring-3"></div>
             </div>
         </section>
 
         <section id="apps">
             <div class="container">
-                <h2>Available Apps</h2>
+                <div class="section-header">
+                    <span class="section-badge">Our Apps</span>
+                    <h2>Three Apps. <span class="gradient-text">Endless Possibilities.</span></h2>
+                    <p>Each app is designed with one goal: make your Mac work smarter, not harder.</p>
+                </div>
+                
                 <div class="apps-grid">
-                    <div class="app-card">
-                        <div class="app-icon">📱</div>
-                        <h3>App One</h3>
-                        <p>A powerful productivity tool for Mac users. Streamline your workflow and boost efficiency.</p>
-                        <div class="app-meta">
-                            <span class="version">v1.0.0</span>
-                            <span class="size">12 MB</span>
+                    <!-- RenderStatus -->
+                    <div class="app-card app-card-renderstatus">
+                        <div class="app-card-glow"></div>
+                        <div class="app-badge">Coming Soon</div>
+                        <div class="app-icon-wrapper">
+                            <div class="app-icon-ring"></div>
+                            <div class="app-icon">◐</div>
                         </div>
-                        <a href="#" class="download-btn">Download for Mac</a>
+                        <h3>RenderStatus</h3>
+                        <p class="app-tagline">Track your renders, live in your menu bar.</p>
+                        <p class="app-description">Monitor rendering progress in Final Cut Pro and Blender with a beautiful ring diagram right in your menu bar. Never lose track of your renders again.</p>
+                        
+                        <ul class="app-features">
+                            <li><span class="feature-icon">◉</span> Ring diagram progress indicator</li>
+                            <li><span class="feature-icon">◉</span> FCP & Blender support</li>
+                            <li><span class="feature-icon">◉</span> Menu bar integration</li>
+                            <li><span class="feature-icon">◉</span> Real-time updates</li>
+                        </ul>
+                        
+                        <div class="app-actions">
+                            <div class="coming-soon-badge">
+                                <span class="pulse-dot"></span>
+                                <span>In Development</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="app-card">
-                        <div class="app-icon">🎨</div>
-                        <h3>App Two</h3>
-                        <p>Creative design assistant that helps bring your ideas to life with intuitive tools.</p>
-                        <div class="app-meta">
-                            <span class="version">v2.1.0</span>
-                            <span class="size">18 MB</span>
+                    <!-- SuffixLinkr -->
+                    <div class="app-card app-card-suffixlinkr">
+                        <div class="app-card-glow"></div>
+                        <div class="app-icon-wrapper">
+                            <div class="app-icon-ring"></div>
+                            <div class="app-icon">⬢</div>
                         </div>
-                        <a href="#" class="download-btn">Download for Mac</a>
+                        <h3>SuffixLinkr</h3>
+                        <p class="app-tagline">Intelligent file associations, visually.</p>
+                        <p class="app-description">Take control of which app opens which file type. SuffixLinkr provides an intuitive graphical interface to set default applications for any file extension.</p>
+                        
+                        <ul class="app-features">
+                            <li><span class="feature-icon">◉</span> Visual suffix management</li>
+                            <li><span class="feature-icon">◉</span> Intelligent app detection</li>
+                            <li><span class="feature-icon">◉</span> Batch operations</li>
+                            <li><span class="feature-icon">◉</span> Quick search & filter</li>
+                        </ul>
+                        
+                        <div class="app-actions">
+                            <a href="#" class="download-btn primary">
+                                <span class="btn-icon">↓</span>
+                                <span>Download .dmg</span>
+                            </a>
+                            <a href="#" class="download-btn secondary">
+                                <span class="btn-icon"></span>
+                                <span>$2.99 on App Store</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="app-card">
-                        <div class="app-icon">⚡</div>
-                        <h3>App Three</h3>
-                        <p>Performance optimization utility that keeps your Mac running smoothly and efficiently.</p>
-                        <div class="app-meta">
-                            <span class="version">v1.5.2</span>
-                            <span class="size">8 MB</span>
+                    <!-- ShotNamrAI -->
+                    <div class="app-card app-card-shotnamr">
+                        <div class="app-card-glow"></div>
+                        <div class="app-icon-wrapper">
+                            <div class="app-icon-ring"></div>
+                            <div class="app-icon">◈</div>
                         </div>
-                        <a href="#" class="download-btn">Download for Mac</a>
+                        <h3>ShotNamrAI</h3>
+                        <p class="app-tagline">AI-powered screenshot intelligence.</p>
+                        <p class="app-description">Automatically organizes your screenshots with local AI. Analyzes images and videos to generate intelligent, descriptive file names. All processing happens on-device.</p>
+                        
+                        <ul class="app-features">
+                            <li><span class="feature-icon">◉</span> Local AI processing</li>
+                            <li><span class="feature-icon">◉</span> Smart file naming</li>
+                            <li><span class="feature-icon">◉</span> Custom folder organization</li>
+                            <li><span class="feature-icon">◉</span> Photo & video support</li>
+                        </ul>
+                        
+                        <div class="app-actions">
+                            <a href="#" class="download-btn primary">
+                                <span class="btn-icon">↓</span>
+                                <span>Download .dmg</span>
+                            </a>
+                            <a href="#" class="download-btn secondary">
+                                <span class="btn-icon"></span>
+                                <span>$2.99 on App Store</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Why Choose Us</span>
+                    <h2>Built Different. <span class="gradient-text">Built Better.</span></h2>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <span class="feature-big-icon">⚡</span>
+                        </div>
+                        <h3>Native Performance</h3>
+                        <p>Built with Swift for lightning-fast performance. No Electron, no compromise.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <span class="feature-big-icon">🔒</span>
+                        </div>
+                        <h3>Privacy First</h3>
+                        <p>All processing happens locally on your Mac. Your data never leaves your device.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <span class="feature-big-icon">🌐</span>
+                        </div>
+                        <h3>Open Source</h3>
+                        <p>Transparency matters. Every line of code is open for review on GitHub.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <span class="feature-big-icon">✨</span>
+                        </div>
+                        <h3>Beautiful Design</h3>
+                        <p>Crafted with attention to every pixel. Apps that look as good as they work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="container">
+                <div class="pricing-card">
+                    <div class="pricing-content">
+                        <div class="pricing-text">
+                            <h2>Free Download or Support Development</h2>
+                            <p>Download the .dmg for free, or get it from the Mac App Store for $2.99 to support ongoing development and receive automatic updates.</p>
+                        </div>
+                        <div class="pricing-options">
+                            <div class="price-option">
+                                <span class="price">Free</span>
+                                <span class="price-label">Direct .dmg</span>
+                            </div>
+                            <span class="price-divider">or</span>
+                            <div class="price-option">
+                                <span class="price">$2.99</span>
+                                <span class="price-label">Mac App Store</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="coffee">
-            <div class="container coffee-section">
-                <h2>Support My Work</h2>
-                <p>If you enjoy my apps and want to support future development, consider buying me a coffee!</p>
-                <a href="https://www.buymeacoffee.com" target="_blank" class="coffee-btn">
-                    ☕ Buy Me a Coffee
-                </a>
+            <div class="container">
+                <div class="coffee-card">
+                    <div class="coffee-content">
+                        <span class="coffee-emoji">☕</span>
+                        <h2>Love these apps?</h2>
+                        <p>If these apps make your life easier, consider buying me a coffee. Your support helps fund future development and new features!</p>
+                        <a href="https://www.buymeacoffee.com" target="_blank" class="coffee-btn">
+                            <span>Buy Me a Coffee</span>
+                            <span class="coffee-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="about">
             <div class="container">
-                <h2>About Me</h2>
+                <div class="section-header">
+                    <span class="section-badge">About</span>
+                    <h2>Crafted with <span class="gradient-text">Passion</span></h2>
+                </div>
+                
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Hi! I'm a passionate developer creating useful applications for macOS users. My goal is to build tools that make everyday tasks easier and more enjoyable.</p>
-                        <p>Each app is carefully crafted with attention to detail, performance, and user experience. I believe in creating software that just works.</p>
-                        <p>Feel free to reach out with feedback, suggestions, or just to say hello!</p>
+                        <p class="about-lead">I'm a developer who believes that the best apps are the ones you barely notice—they just work.</p>
+                        <p>Every app I create solves a real problem I've encountered in my own workflow. From tracking renders during long video projects to organizing the chaos of screenshots, these tools are born from necessity and refined through daily use.</p>
+                        <p>The apps are open source because I believe in transparency and community. Feel free to explore the code, suggest improvements, or fork it for your own needs.</p>
+                        <div class="about-links">
+                            <a href="https://github.com" target="_blank" class="about-link">
+                                <span class="link-icon">⬡</span>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" class="about-link">
+                                <span class="link-icon">◇</span>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,8 +296,83 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Mac Apps. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">◆</div>
+                        <span>Mac Apps</span>
+                    </div>
+                    <p>Premium macOS applications, open source.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#apps">Apps</a>
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mac Apps. All rights reserved. Made with ♥ for macOS.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Smooth parallax effect for floating cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.floating-card');
+            const rings = document.querySelectorAll('.hero-ring');
+            
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            
+            cards.forEach((card, index) => {
+                const depth = (index + 1) * 10;
+                const offsetX = x * depth;
+                const offsetY = y * depth;
+                card.style.setProperty('--parallax-x', `${offsetX}px`);
+                card.style.setProperty('--parallax-y', `${offsetY}px`);
+            });
+            
+            rings.forEach((ring, index) => {
+                const depth = (index + 1) * 5;
+                const offsetX = x * depth;
+                const offsetY = y * depth;
+                ring.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.app-card, .feature-card, .section-header').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

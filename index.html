@@ -328,12 +328,17 @@
             
             cards.forEach((card, index) => {
                 const depth = (index + 1) * 10;
-                card.style.transform = `translate(${x * depth}px, ${y * depth}px)`;
+                const offsetX = x * depth;
+                const offsetY = y * depth;
+                card.style.setProperty('--parallax-x', `${offsetX}px`);
+                card.style.setProperty('--parallax-y', `${offsetY}px`);
             });
             
             rings.forEach((ring, index) => {
                 const depth = (index + 1) * 5;
-                ring.style.transform = `translate(-50%, -50%) translate(${x * depth}px, ${y * depth}px)`;
+                const offsetX = x * depth;
+                const offsetY = y * depth;
+                ring.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
             });
         });
 

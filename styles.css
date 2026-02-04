@@ -89,9 +89,8 @@ body {
     width: 400px;
     height: 400px;
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(6, 182, 212, 0.2));
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
     animation-delay: -14s;
 }
 
@@ -378,7 +377,8 @@ nav .coffee-link:hover {
     font-weight: 600;
     color: var(--text);
     box-shadow: var(--shadow-lg);
-    transition: transform 0.1s ease-out;
+    --parallax-x: 0px;
+    --parallax-y: 0px;
     animation: float 6s ease-in-out infinite;
 }
 
@@ -413,8 +413,8 @@ nav .coffee-link:hover {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    0%, 100% { transform: translate(var(--parallax-x, 0px), var(--parallax-y, 0px)); }
+    50% { transform: translate(var(--parallax-x, 0px), calc(var(--parallax-y, 0px) - 20px)); }
 }
 
 .hero-ring {

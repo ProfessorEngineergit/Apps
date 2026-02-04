@@ -1,1 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps by Professor Engineer | RenderStatus • SuffixLinkr • ShotNamrAI</title>
+    <meta name="description" content="Premium macOS apps: RenderStatus for render tracking, SuffixLinkr for file associations, ShotNamrAI for intelligent screenshot naming.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Gradient Overlays -->
+    <div class="gradient-overlay"></div>
+    <div class="noise-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Apps</span>
+            </a>
+            <div class="nav-links">
+                <a href="#apps" class="nav-link">Apps</a>
+                <a href="#renderstatus" class="nav-link">RenderStatus</a>
+                <a href="#suffixlinkr" class="nav-link">SuffixLinkr</a>
+                <a href="#shotnamrai" class="nav-link">ShotNamrAI</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Open Source • macOS Native</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Beautiful Apps</span>
+                <span class="title-line gradient-text">for macOS</span>
+            </h1>
+            <p class="hero-description">
+                Three premium applications designed to enhance your macOS experience. 
+                Intelligent, powerful, and beautifully crafted.
+            </p>
+            <div class="hero-buttons">
+                <a href="#apps" class="btn btn-primary">
+                    <span>Explore Apps</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/ProfessorEngineergit" class="btn btn-secondary" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating 3D Cards Preview -->
+        <div class="hero-3d-container">
+            <div class="floating-card card-1">
+                <div class="card-glow"></div>
+                <div class="card-icon">📊</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="card-glow"></div>
+                <div class="card-icon">🔗</div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="card-glow"></div>
+                <div class="card-icon">🤖</div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Apps Overview Section -->
+    <section class="apps-overview" id="apps">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Our Apps</span>
+                <h2 class="section-title">Three Powerful Tools</h2>
+                <p class="section-description">Each app is crafted with care, focusing on user experience and powerful functionality.</p>
+            </div>
+            
+            <div class="apps-grid">
+                <a href="#renderstatus" class="app-preview-card" data-app="render">
+                    <div class="preview-glow"></div>
+                    <div class="preview-icon">📊</div>
+                    <h3>RenderStatus</h3>
+                    <p>Track renders in your menu bar</p>
+                    <span class="preview-status coming-soon">Coming Soon</span>
+                </a>
+                
+                <a href="#suffixlinkr" class="app-preview-card" data-app="suffix">
+                    <div class="preview-glow"></div>
+                    <div class="preview-icon">🔗</div>
+                    <h3>SuffixLinkr</h3>
+                    <p>Intelligent file associations</p>
+                    <span class="preview-status available">Available Now</span>
+                </a>
+                
+                <a href="#shotnamrai" class="app-preview-card" data-app="shot">
+                    <div class="preview-glow"></div>
+                    <div class="preview-icon">🤖</div>
+                    <h3>ShotNamrAI</h3>
+                    <p>AI-powered screenshot naming</p>
+                    <span class="preview-status available">Available Now</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RenderStatus Section -->
+    <section class="app-section" id="renderstatus">
+        <div class="app-bg render-bg"></div>
+        <div class="section-container">
+            <div class="app-content">
+                <div class="app-info">
+                    <span class="app-badge">Coming Soon</span>
+                    <h2 class="app-title">
+                        <span class="app-icon">📊</span>
+                        RenderStatus
+                    </h2>
+                    <p class="app-tagline">Track your renders, right in your menu bar</p>
+                    <p class="app-description">
+                        RenderStatus seamlessly integrates with Final Cut Pro and Blender to provide 
+                        real-time rendering progress tracking. Watch your exports complete with a 
+                        beautiful ring-diagram right in your macOS menu bar.
+                    </p>
+                    
+                    <div class="app-features">
+                        <div class="feature">
+                            <div class="feature-icon">🎬</div>
+                            <div class="feature-text">
+                                <strong>Final Cut Pro</strong>
+                                <span>Track exports &amp; renders</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-text">
+                                <strong>Blender</strong>
+                                <span>Monitor 3D renders</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📈</div>
+                            <div class="feature-text">
+                                <strong>Ring Diagram</strong>
+                                <span>Visual progress indicator</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🔔</div>
+                            <div class="feature-text">
+                                <strong>Notifications</strong>
+                                <span>Know when renders complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-buttons">
+                        <button class="btn btn-disabled">
+                            <span>Coming Soon</span>
+                        </button>
+                        <a href="https://github.com/ProfessorEngineergit" class="btn btn-outline" target="_blank">
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="app-visual">
+                    <div class="render-visual">
+                        <div class="render-ring">
+                            <svg viewBox="0 0 200 200">
+                                <circle class="ring-bg" cx="100" cy="100" r="80"/>
+                                <circle class="ring-progress" cx="100" cy="100" r="80"/>
+                            </svg>
+                            <div class="ring-content">
+                                <span class="ring-percent">73%</span>
+                                <span class="ring-label">Rendering</span>
+                            </div>
+                        </div>
+                        <div class="render-info">
+                            <div class="render-item">
+                                <span class="item-label">Final Cut Pro</span>
+                                <span class="item-value">4K Export</span>
+                            </div>
+                            <div class="render-item">
+                                <span class="item-label">Time Remaining</span>
+                                <span class="item-value">12:34</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SuffixLinkr Section -->
+    <section class="app-section" id="suffixlinkr">
+        <div class="app-bg suffix-bg"></div>
+        <div class="section-container">
+            <div class="app-content reverse">
+                <div class="app-info">
+                    <span class="app-badge available-badge">Available Now</span>
+                    <h2 class="app-title">
+                        <span class="app-icon">🔗</span>
+                        SuffixLinkr
+                    </h2>
+                    <p class="app-tagline">Intelligent file association management</p>
+                    <p class="app-description">
+                        Take control of which apps open your files. SuffixLinkr provides a beautiful, 
+                        intuitive interface to manage file suffix associations on macOS. No more 
+                        struggling with system preferences – just point, click, and link.
+                    </p>
+                    
+                    <div class="app-features">
+                        <div class="feature">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-text">
+                                <strong>Visual Interface</strong>
+                                <span>Intuitive drag &amp; drop</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-text">
+                                <strong>Instant Changes</strong>
+                                <span>Apply immediately</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📁</div>
+                            <div class="feature-text">
+                                <strong>All Formats</strong>
+                                <span>Support for any suffix</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">💾</div>
+                            <div class="feature-text">
+                                <strong>Backup &amp; Restore</strong>
+                                <span>Save your preferences</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-buttons">
+                        <a href="#" class="btn btn-primary download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                            </svg>
+                            <span>Download .dmg</span>
+                        </a>
+                        <a href="#" class="btn btn-appstore">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            <span>Mac App Store • €2.99</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="app-visual">
+                    <div class="suffix-visual">
+                        <div class="suffix-demo">
+                            <div class="suffix-row">
+                                <div class="suffix-type">.psd</div>
+                                <div class="suffix-arrow">→</div>
+                                <div class="suffix-app">Photoshop</div>
+                            </div>
+                            <div class="suffix-row active">
+                                <div class="suffix-type">.mp4</div>
+                                <div class="suffix-arrow">→</div>
+                                <div class="suffix-app">Final Cut</div>
+                            </div>
+                            <div class="suffix-row">
+                                <div class="suffix-type">.json</div>
+                                <div class="suffix-arrow">→</div>
+                                <div class="suffix-app">VS Code</div>
+                            </div>
+                            <div class="suffix-row">
+                                <div class="suffix-type">.blend</div>
+                                <div class="suffix-arrow">→</div>
+                                <div class="suffix-app">Blender</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ShotNamrAI Section -->
+    <section class="app-section" id="shotnamrai">
+        <div class="app-bg shot-bg"></div>
+        <div class="section-container">
+            <div class="app-content">
+                <div class="app-info">
+                    <span class="app-badge available-badge">Available Now</span>
+                    <h2 class="app-title">
+                        <span class="app-icon">🤖</span>
+                        ShotNamrAI
+                    </h2>
+                    <p class="app-tagline">AI-powered screenshot organization</p>
+                    <p class="app-description">
+                        Say goodbye to "Screenshot 2024-01-15 at 10.23.45.png". ShotNamrAI uses 
+                        local AI to analyze your screenshots and screen recordings, automatically 
+                        naming them with meaningful, searchable descriptions.
+                    </p>
+                    
+                    <div class="app-features">
+                        <div class="feature">
+                            <div class="feature-icon">🧠</div>
+                            <div class="feature-text">
+                                <strong>Local AI</strong>
+                                <span>Private, on-device processing</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📸</div>
+                            <div class="feature-text">
+                                <strong>Screenshots</strong>
+                                <span>Intelligent image analysis</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎥</div>
+                            <div class="feature-text">
+                                <strong>Screen Recordings</strong>
+                                <span>Video content recognition</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📂</div>
+                            <div class="feature-text">
+                                <strong>Custom Folder</strong>
+                                <span>Organized destination</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-buttons">
+                        <a href="#" class="btn btn-primary download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                            </svg>
+                            <span>Download .dmg</span>
+                        </a>
+                        <a href="#" class="btn btn-appstore">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            <span>Mac App Store • €2.99</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="app-visual">
+                    <div class="shot-visual">
+                        <div class="shot-demo">
+                            <div class="shot-before">
+                                <span class="shot-label">Before</span>
+                                <div class="shot-filename old">Screenshot 2024-01-15 at 10.23.45.png</div>
+                            </div>
+                            <div class="shot-arrow">
+                                <div class="ai-badge">AI</div>
+                            </div>
+                            <div class="shot-after">
+                                <span class="shot-label">After</span>
+                                <div class="shot-filename new">VSCode-Python-Debug-Session.png</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Pricing</span>
+                <h2 class="section-title">Simple &amp; Fair</h2>
+                <p class="section-description">All our apps are open source. Download free or support development via the App Store.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card free">
+                    <div class="pricing-header">
+                        <h3>Free Download</h3>
+                        <div class="price">€0</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Full functionality</li>
+                        <li>✓ Direct .dmg download</li>
+                        <li>✓ Open source</li>
+                        <li>✓ Community support</li>
+                    </ul>
+                    <a href="#apps" class="btn btn-outline">Download .dmg</a>
+                </div>
+                
+                <div class="pricing-card appstore">
+                    <div class="popular-badge">Support Development</div>
+                    <div class="pricing-header">
+                        <h3>Mac App Store</h3>
+                        <div class="price">€2.99</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Full functionality</li>
+                        <li>✓ Automatic updates</li>
+                        <li>✓ Easy installation</li>
+                        <li>✓ Support the developer</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Get on App Store</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Apps</span>
+                    <p>Premium macOS applications by Professor Engineer</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Apps</h4>
+                        <a href="#renderstatus">RenderStatus</a>
+                        <a href="#suffixlinkr">SuffixLinkr</a>
+                        <a href="#shotnamrai">ShotNamrAI</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="https://github.com/ProfessorEngineergit" target="_blank">GitHub</a>
+                        <a href="#pricing">Pricing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Professor Engineer. All apps are open source under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // Three.js Background
+        const canvas = document.getElementById('bg-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        // Create floating spheres
+        const spheres = [];
+        const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+        
+        const colors = [0x6366f1, 0x8b5cf6, 0xec4899, 0x06b6d4];
+        
+        for (let i = 0; i < 50; i++) {
+            const material = new THREE.MeshBasicMaterial({
+                color: colors[Math.floor(Math.random() * colors.length)],
+                transparent: true,
+                opacity: 0.1 + Math.random() * 0.2
+            });
+            
+            const sphere = new THREE.Mesh(sphereGeometry, material);
+            sphere.position.x = (Math.random() - 0.5) * 100;
+            sphere.position.y = (Math.random() - 0.5) * 100;
+            sphere.position.z = (Math.random() - 0.5) * 50 - 25;
+            sphere.scale.setScalar(Math.random() * 2 + 0.5);
+            
+            sphere.userData = {
+                originalY: sphere.position.y,
+                speed: Math.random() * 0.5 + 0.2,
+                amplitude: Math.random() * 2 + 1
+            };
+            
+            spheres.push(sphere);
+            scene.add(sphere);
+        }
+        
+        // Create torus knots
+        const torusKnots = [];
+        const torusGeometry = new THREE.TorusKnotGeometry(2, 0.5, 100, 16);
+        
+        for (let i = 0; i < 5; i++) {
+            const material = new THREE.MeshBasicMaterial({
+                color: colors[i % colors.length],
+                transparent: true,
+                opacity: 0.05,
+                wireframe: true
+            });
+            
+            const torus = new THREE.Mesh(torusGeometry, material);
+            torus.position.x = (Math.random() - 0.5) * 60;
+            torus.position.y = (Math.random() - 0.5) * 60;
+            torus.position.z = -30 - Math.random() * 20;
+            torus.scale.setScalar(Math.random() * 2 + 1);
+            
+            torusKnots.push(torus);
+            scene.add(torus);
+        }
+        
+        camera.position.z = 30;
+        
+        // Mouse movement effect
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+        });
+        
+        // Animation loop
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.01;
+            
+            // Animate spheres
+            spheres.forEach((sphere, i) => {
+                sphere.position.y = sphere.userData.originalY + 
+                    Math.sin(time * sphere.userData.speed + i) * sphere.userData.amplitude;
+                sphere.rotation.x += 0.001;
+                sphere.rotation.y += 0.001;
+            });
+            
+            // Animate torus knots
+            torusKnots.forEach((torus, i) => {
+                torus.rotation.x += 0.002;
+                torus.rotation.y += 0.003;
+            });
+            
+            // Camera follows mouse slightly
+            camera.position.x += (mouseX * 5 - camera.position.x) * 0.02;
+            camera.position.y += (-mouseY * 5 - camera.position.y) * 0.02;
+            camera.lookAt(scene.position);
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+        
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero animations
+        gsap.from('.hero-badge', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.2
+        });
+        
+        gsap.from('.hero-title .title-line', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            delay: 0.4
+        });
+        
+        gsap.from('.hero-description', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.8
+        });
+        
+        gsap.from('.hero-buttons', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 1
+        });
+        
+        // Floating cards animation
+        gsap.from('.floating-card', {
+            opacity: 0,
+            scale: 0.5,
+            duration: 1.5,
+            stagger: 0.2,
+            delay: 1.2,
+            ease: 'elastic.out(1, 0.5)'
+        });
+        
+        // Continuous floating animation for cards
+        gsap.to('.card-1', {
+            y: -20,
+            rotateY: 10,
+            rotateX: -5,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+        
+        gsap.to('.card-2', {
+            y: -15,
+            rotateY: -8,
+            rotateX: 5,
+            duration: 3.5,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            delay: 0.5
+        });
+        
+        gsap.to('.card-3', {
+            y: -25,
+            rotateY: 12,
+            rotateX: -8,
+            duration: 4,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            delay: 1
+        });
+        
+        // Section animations
+        gsap.utils.toArray('.app-section').forEach(section => {
+            gsap.from(section.querySelector('.app-info'), {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                x: section.querySelector('.app-content.reverse') ? 50 : -50,
+                duration: 1
+            });
+            
+            gsap.from(section.querySelector('.app-visual'), {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                x: section.querySelector('.app-content.reverse') ? -50 : 50,
+                duration: 1,
+                delay: 0.3
+            });
+        });
+        
+        // App preview cards animation
+        gsap.from('.app-preview-card', {
+            scrollTrigger: {
+                trigger: '.apps-grid',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            y: 50,
+            scale: 0.9,
+            duration: 0.8,
+            stagger: 0.15
+        });
+        
+        // Pricing cards animation
+        gsap.from('.pricing-card', {
+            scrollTrigger: {
+                trigger: '.pricing-grid',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.2
+        });
+        
+        // Render ring animation
+        gsap.to('.ring-progress', {
+            scrollTrigger: {
+                trigger: '#renderstatus',
+                start: 'top 60%'
+            },
+            strokeDashoffset: 125,
+            duration: 2,
+            ease: 'power2.out'
+        });
+        
+        // Suffix rows animation
+        gsap.from('.suffix-row', {
+            scrollTrigger: {
+                trigger: '#suffixlinkr',
+                start: 'top 60%'
+            },
+            opacity: 0,
+            x: -30,
+            duration: 0.6,
+            stagger: 0.15
+        });
+        
+        // Shot demo animation
+        gsap.from('.shot-before', {
+            scrollTrigger: {
+                trigger: '#shotnamrai',
+                start: 'top 60%'
+            },
+            opacity: 0,
+            x: -30,
+            duration: 0.8
+        });
+        
+        gsap.from('.shot-arrow', {
+            scrollTrigger: {
+                trigger: '#shotnamrai',
+                start: 'top 60%'
+            },
+            opacity: 0,
+            scale: 0,
+            duration: 0.5,
+            delay: 0.4
+        });
+        
+        gsap.from('.shot-after', {
+            scrollTrigger: {
+                trigger: '#shotnamrai',
+                start: 'top 60%'
+            },
+            opacity: 0,
+            x: 30,
+            duration: 0.8,
+            delay: 0.6
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Nav background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -29,7 +29,10 @@ needed — the card and detail view are generated automatically:
   platforms: ["Web"],                 // chips shown on the card
   status: "available",                // "available" | "coming-soon"
   price: "Free",
-  accent: "#6366f1",                  // glow/accent color
+  accent: "#6366f1",                  // subtle per-app icon-tile tint
+  featured: true,                     // optional: include in the rotating hero
+  iconImage: "https://…/icon.png",    // optional: real icon (falls back to `icon`)
+  screenshot: "https://…/shot.png",   // optional: real screenshot (hero + detail)
   links: { web: "https://…", github: "https://…" }, // dmg / appstore also supported
   features: [
     { icon: "⚡", title: "Fast", sub: "No install" }

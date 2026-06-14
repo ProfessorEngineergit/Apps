@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps — by Professor Engineer</title>
-    <meta name="description" content="A small, carefully built app store: web tools, mobile and macOS apps. Browse, filter and download. Open source.">
+    <title>Apps by Professor Engineer | A little App Store for Web, Mobile & Desktop</title>
+    <meta name="description" content="A small App Store for my apps — web apps, mobile apps and desktop apps. Browse, filter and download. Open source.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Quiet static backdrop -->
-    <div class="bg-grid"></div>
-    <div class="bg-lines"></div>
-    <div class="bg-noise"></div>
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Gradient Overlays -->
+    <div class="gradient-overlay"></div>
+    <div class="noise-overlay"></div>
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-inner">
+        <div class="nav-container">
             <a href="#" class="nav-logo">
-                <span class="logo-mark">⌘</span>
-                <span>Apps</span>
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Apps</span>
             </a>
             <div class="nav-links">
                 <a href="#store" class="nav-link" data-filter="all">All</a>
@@ -29,86 +31,144 @@
                 <a href="#store" class="nav-link" data-filter="mobile">Mobile</a>
                 <a href="#store" class="nav-link" data-filter="desktop">Desktop</a>
             </div>
-            <div class="nav-spacer"></div>
-            <label class="nav-search">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-                </svg>
-                <input type="search" id="search" placeholder="Search" aria-label="Search apps">
-                <kbd>/</kbd>
-            </label>
-            <a href="https://github.com/ProfessorEngineergit" class="icon-btn" target="_blank" rel="noopener" aria-label="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            </a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-head">
-                <h1 class="hero-title">Tools I build,<br><span class="dim">in one place.</span></h1>
-                <p class="hero-sub">A small store of web, mobile and macOS apps — browse, filter, and grab what's useful.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Open Source • Web · Mobile · Desktop</span>
             </div>
-            <!-- Rotating featured spotlight (rendered by app.js) -->
-            <div class="featured" id="featured" aria-label="Featured app"></div>
+            <h1 class="hero-title">
+                <span class="title-line">A little App Store</span>
+                <span class="title-line gradient-text">for everything I build</span>
+            </h1>
+            <p class="hero-description">
+                Browse, filter and download my apps in one place — beautifully crafted
+                tools for the web, your phone and your desktop.
+            </p>
+            <div class="hero-buttons">
+                <a href="#store" class="btn btn-primary">
+                    <span>Browse the Store</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/ProfessorEngineergit" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
         </div>
-    </header>
 
-    <!-- Store -->
+        <!-- Floating 3D Cards Preview -->
+        <div class="hero-3d-container">
+            <div class="floating-card card-1">
+                <div class="card-glow"></div>
+                <div class="card-icon">🌐</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="card-glow"></div>
+                <div class="card-icon">📱</div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="card-glow"></div>
+                <div class="card-icon">🖥️</div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Store Section -->
     <section class="store" id="store">
-        <div class="container">
-            <div class="store-bar">
-                <h2>Browse<span class="count" id="store-count"></span></h2>
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">The Store</span>
+                <h2 class="section-title">Find your next app</h2>
+                <p class="section-description">Filter by platform or search by name. Tap a card for the full details.</p>
+            </div>
+
+            <!-- Controls: search + filter tabs -->
+            <div class="store-controls">
+                <div class="store-search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="search" id="store-search-input" placeholder="Search apps…" aria-label="Search apps">
+                </div>
                 <div class="filter-tabs" id="filter-tabs" role="tablist"></div>
             </div>
+
+            <!-- Generated app cards -->
             <div class="store-grid" id="app-grid"></div>
+
+            <!-- Empty state when search/filter matches nothing -->
             <div class="store-empty" id="store-empty" hidden>
-                <div class="e-icon">🔍</div>
+                <div class="store-empty-icon">🔍</div>
                 <p>No apps match your search.</p>
             </div>
         </div>
     </section>
 
-    <!-- Detail modal -->
-    <div class="detail" id="detail" aria-hidden="true">
-        <div class="detail-backdrop" data-close></div>
-        <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
-            <button class="detail-close" data-close aria-label="Close">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <!-- App Detail Overlay (populated by app.js) -->
+    <div class="app-detail" id="app-detail" aria-hidden="true">
+        <div class="app-detail-backdrop" data-close></div>
+        <div class="app-detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+            <button class="app-detail-close" data-close aria-label="Close">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
             </button>
-            <div class="detail-body" id="detail-body"></div>
+            <div class="app-detail-body" id="app-detail-body"></div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <a href="#" class="nav-logo"><span class="logo-mark">⌘</span><span>Apps</span></a>
-                <p>A small, carefully built store by Professor Engineer. Open source under MIT.</p>
-            </div>
-            <div class="footer-cols">
-                <div class="footer-col">
-                    <h4>Browse</h4>
-                    <a href="#store" data-filter="web">Web</a>
-                    <a href="#store" data-filter="mobile">Mobile</a>
-                    <a href="#store" data-filter="desktop">Desktop</a>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Apps</span>
+                    <p>A little App Store by Professor Engineer — web, mobile & desktop apps.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Links</h4>
-                    <a href="https://github.com/ProfessorEngineergit" target="_blank" rel="noopener">GitHub</a>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Browse</h4>
+                        <a href="#store" data-filter="web">Web</a>
+                        <a href="#store" data-filter="mobile">Mobile</a>
+                        <a href="#store" data-filter="desktop">Desktop</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="https://github.com/ProfessorEngineergit" target="_blank" rel="noopener">GitHub</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Professor Engineer · All apps open source under the MIT License.</p>
+            <div class="footer-bottom">
+                <p>© 2026 Professor Engineer. All apps are open source under the MIT License.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- App data + logic -->
     <script src="apps.js"></script>
     <script src="app.js"></script>
 </body>

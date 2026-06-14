@@ -15,11 +15,8 @@
  *    platforms   array of short platform chips, e.g. ["macOS"], ["iOS"]
  *    status      "available" | "coming-soon"
  *    price       free text, e.g. "Free", "€2.99", "Free • Open Source"
- *    accent      hex color used as a subtle per-app icon-tile tint
+ *    accent      hex color used for this app's glow/accents
  *    placeholder true => visually marked as an example entry to be replaced
- *    featured    true => included in the rotating hero spotlight
- *    iconImage   optional URL to a real app icon (falls back to `icon` emoji)
- *    screenshot  optional URL to a real screenshot (shown in hero/detail)
  *    links       { web, dmg, appstore, github } — omit/empty any that don't apply
  *    features    [ { icon, title, sub } ] — up to 4 look best
  *    visual      one of: "ring" | "suffix" | "rename" | "preview"
@@ -42,7 +39,6 @@ const APPS = [
     status: "available",
     price: "Free • Open Source",
     accent: "#a855f7",
-    featured: true,
     links: {
       web: "https://professorengineergit.github.io/Looksmith/",
       github: "https://github.com/ProfessorEngineergit/Looksmith"
@@ -115,7 +111,6 @@ const APPS = [
     status: "available",
     price: "Free • Open Source",
     accent: "#22c55e",
-    featured: true,
     links: {
       web: "https://professorengineergit.github.io/tasks/",
       github: "https://github.com/ProfessorEngineergit/tasks"
@@ -230,32 +225,6 @@ const APPS = [
    *  DESKTOP — macOS
    * ============================================================ */
   {
-    id: "caelum",
-    name: "Caelum",
-    tagline: "The cosmos on your desktop, every day",
-    description:
-      "Caelum is a menu-bar app that quietly sets a stunning astronomy image as your wallpaper every day — pulling from NASA APOD, Hubble, James Webb, ESO, NASA EPIC and more. An ambient mode turns idle screens into a full-screen, multi-display slideshow with a slow Ken Burns drift, while the UI re-themes itself from each image's dominant colors. No accounts, no tracking — open source.",
-    icon: "🌌",
-    category: "desktop",
-    platforms: ["macOS"],
-    status: "available",
-    price: "Free • Open Source",
-    accent: "#7c5cff",
-    featured: true,
-    iconImage:
-      "https://raw.githubusercontent.com/ProfessorEngineergit/caelum/main/docs/assets/icon-512.png",
-    screenshot:
-      "https://raw.githubusercontent.com/ProfessorEngineergit/caelum/main/docs/assets/popover.png",
-    links: { github: "https://github.com/ProfessorEngineergit/caelum" },
-    features: [
-      { icon: "🛰️", title: "10 Sources", sub: "APOD, Hubble, Webb, ESO…" },
-      { icon: "🌠", title: "Ambient Mode", sub: "Idle Ken Burns slideshow" },
-      { icon: "🎨", title: "Adaptive UI", sub: "Themes from each image" },
-      { icon: "🔒", title: "Private", sub: "No accounts, no tracking" }
-    ],
-    visual: "preview"
-  },
-  {
     id: "renderstatus",
     name: "RenderStatus",
     tagline: "Track your renders, right in your menu bar",
@@ -329,7 +298,6 @@ const APPS = [
     status: "available",
     price: "Free • €2.99 on App Store",
     accent: "#ec4899",
-    featured: true,
     links: {
       dmg: "#",
       appstore: "#",
@@ -359,7 +327,6 @@ const APPS = [
     status: "available",
     price: "Free • Open Source",
     accent: "#f97316",
-    featured: true,
     links: { github: "https://github.com/ProfessorEngineergit/loki-prank" },
     features: [
       { icon: "🎲", title: "32 Pranks", sub: "All reversible" },

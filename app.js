@@ -29,13 +29,52 @@
       "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
     }[c]));
 
+  /* ---------- SVG icon set (no emoji) ---------- */
+  const ICONS = {
+    app: '<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6M12 9v6"/>',
+    grid: '<rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/>',
+    smartphone: '<rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 18h2"/>',
+    monitor: '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+    palette: '<rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><circle cx="16.75" cy="16.75" r="3.25"/>',
+    image: '<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L6 20"/>',
+    shield: '<path d="M12 3l7 3v5c0 4.6-3 8.3-7 10-4-1.7-7-5.4-7-10V6l7-3z"/><path d="M9.5 12l1.8 1.8L15 10"/>',
+    "check-square": '<rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8 12.2l2.6 2.6L16.5 9"/>',
+    layers: '<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3.5 12.5L12 17l8.5-4.5"/>',
+    star: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17.8 6.8 19.6l1-5.8L3.5 9.7l5.9-.9z"/>',
+    orbit: '<circle cx="12" cy="12" r="2.6"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(-30 12 12)"/>',
+    key: '<circle cx="8" cy="15" r="4.2"/><path d="M10.8 12.2L20 3M17 6l2.5 2.5M14.2 8.8l2.4 2.4"/>',
+    sparkles: '<path d="M12 3.5l1.7 4 4 1.7-4 1.7L12 15l-1.7-4.1-4-1.7 4-1.7z"/><path d="M5.5 15l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/>',
+    wand: '<path d="M15 6l3 3M5.5 20.5L16 10l-2-2L3.5 18.5z"/><path d="M17 3.5l.7 1.6 1.6.7-1.6.7L17 8l-.7-1.5-1.6-.7 1.6-.7z"/>',
+    activity: '<path d="M3 12h3.5l2.5 7 4-14 2.5 7H21"/>',
+    link: '<path d="M9.5 14.5l5-5"/><path d="M11 6.5l1.2-1.2a3.8 3.8 0 0 1 5.5 5.5L16.5 12"/><path d="M13 17.5l-1.2 1.2a3.8 3.8 0 0 1-5.5-5.5L7.5 12"/>',
+    mask: '<circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.3 2.4 2 4 2s3-.7 4-2"/><path d="M9 9.5h.01M15 9.5h.01"/>',
+    terminal: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9.5l3 2.5-3 2.5M13 15h4"/>',
+    check: '<path d="M5 12.5l4 4 10-10.5"/>'
+  };
+  const APP_ICONS = {
+    looksmith: "palette", openimagelabel: "image", opensiteblocker: "shield",
+    tasks: "check-square", "ui-swipe": "layers", "things-i-wish-for": "star",
+    "splat-viewer": "orbit", screentimehacker: "key", caelum: "sparkles",
+    renderstatus: "activity", suffixlinkr: "link", shotnamrai: "wand",
+    "loki-prank": "mask", sshmanager: "terminal"
+  };
+  const CAT_ICONS = { all: "grid", web: "globe", mobile: "smartphone", desktop: "monitor" };
+
+  function svgIcon(key, size) {
+    const p = ICONS[key] || ICONS.app;
+    const s = size || 24;
+    return `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+  }
+
   /* ---------- shared bits ---------- */
   function iconTile(app, cls) {
     const tint = app.accent || "#7c5cff";
+    const key = app.iconKey || APP_ICONS[app.id] || "app";
     const img = app.iconImage
       ? `<img src="${esc(app.iconImage)}" alt="" loading="lazy" onerror="this.remove()">`
       : "";
-    return `<div class="icon-tile ${cls || ""}" style="--tile:${tint}"><span class="glyph">${app.icon || "📦"}</span>${img}</div>`;
+    return `<div class="icon-tile ${cls || ""}" style="--tile:${tint}"><span class="glyph">${svgIcon(key)}</span>${img}</div>`;
   }
 
   function statusPill(app) {
@@ -73,7 +112,13 @@
           <div class="ai">AI</div>
           <div><span class="k">After</span><div class="fname new">${esc(d.after || "")}</div></div></div>`;
       default:
-        return `<div class="preview-viz">${iconTile(app)}<div class="pv-name">${esc(app.name)}</div><div class="pv-plat">${esc((app.platforms || []).join(" · "))}</div></div>`;
+        return `<div class="preview-viz"><div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i></div>
+          <div class="mock-body">${iconTile(app)}
+            <div class="mock-name">${esc(app.name)}</div>
+            <div class="mock-plat">${esc((app.platforms || []).join(" · "))}</div>
+            <div class="mock-lines"><span></span><span></span><span></span></div>
+          </div></div></div>`;
     }
   }
 
@@ -100,7 +145,7 @@
   /* ---------- filter tabs ---------- */
   function renderTabs() {
     tabsEl.innerHTML = CATEGORIES.map(
-      (c) => `<button class="filter-tab${c.id === activeFilter ? " active" : ""}" data-filter="${c.id}" role="tab" aria-selected="${c.id === activeFilter}"><span class="tab-icon">${c.icon}</span>${c.label}</button>`
+      (c) => `<button class="filter-tab${c.id === activeFilter ? " active" : ""}" data-filter="${c.id}" role="tab" aria-selected="${c.id === activeFilter}"><span class="tab-icon">${svgIcon(CAT_ICONS[c.id] || "grid", 15)}</span>${c.label}</button>`
     ).join("");
   }
 
@@ -155,7 +200,7 @@
 
   function detailMarkup(app) {
     const feats = (app.features || [])
-      .map((f) => `<div class="feat"><span class="f-ic">${f.icon}</span><div><strong>${esc(f.title)}</strong><span>${esc(f.sub)}</span></div></div>`)
+      .map((f) => `<div class="feat"><span class="f-ic">${svgIcon("check", 16)}</span><div><strong>${esc(f.title)}</strong><span>${esc(f.sub)}</span></div></div>`)
       .join("");
     const media = app.screenshot
       ? `<div class="detail-shot media"><img src="${esc(app.screenshot)}" alt="${esc(app.name)} screenshot" loading="lazy" onerror="this.closest('.detail-shot').remove()"></div>`

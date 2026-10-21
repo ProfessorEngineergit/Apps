@@ -40,3 +40,7 @@ needed — the card and detail view are generated automatically:
 
 The entries tagged with `placeholder: true` (the Web and Mobile examples) are
 there to show the layout — replace them with your real apps.
+
+## Development and AI assistance
+
+Small learning or experimental project developed with AI assistance. The default-branch history includes contributions explicitly attributed to GitHub Copilot ([example](https://github.com/ProfessorEngineergit/Apps/commit/b67edbe62980492d95015ea84da70d0359ec52f6)). This documents AI involvement in those contributions; it does not establish the origin of every line or independent validation. Existing author, co-author and session records are retained.

@@ -1,6 +1,6 @@
 # Apps
 
-A little App Store for my apps — **web**, **mobile** and **desktop** — in one
+A little App Store for my apps - **web**, **mobile** and **desktop** - in one
 place. Browse, filter by platform, search, and open any app for full details.
 
 It's a zero-build static site (HTML + CSS + vanilla JS, with Three.js & GSAP via
@@ -8,15 +8,15 @@ CDN), so it can be hosted anywhere (e.g. GitHub Pages).
 
 ## Files
 
-- `index.html` — page structure (hero, store, detail overlay, footer)
-- `styles.css` — styling, 3D card tilt, detail overlay
-- `app.js` — rendering, filtering, search, 3D tilt, detail overlay, routing
-- `apps.js` — **the app catalog** (data source)
+- `index.html` - page structure (hero, store, detail overlay, footer)
+- `styles.css` - styling, 3D card tilt, detail overlay
+- `app.js` - rendering, filtering, search, 3D tilt, detail overlay, routing
+- `apps.js` - **the app catalog** (data source)
 
 ## Add a new app
 
 Open `apps.js` and append one object to the `APPS` array. No HTML editing
-needed — the card and detail view are generated automatically:
+needed - the card and detail view are generated automatically:
 
 ```js
 {
@@ -39,8 +39,8 @@ needed — the card and detail view are generated automatically:
 ```
 
 The entries tagged with `placeholder: true` (the Web and Mobile examples) are
-there to show the layout — replace them with your real apps.
+there to show the layout - replace them with your real apps.
 
-## Development and AI assistance
+## AI assistance
 
-Small learning or experimental project developed with AI assistance. The default-branch history includes contributions explicitly attributed to GitHub Copilot ([example](https://github.com/ProfessorEngineergit/Apps/commit/b67edbe62980492d95015ea84da70d0359ec52f6)). This documents AI involvement in those contributions; it does not establish the origin of every line or independent validation. Existing author, co-author and session records are retained.
+Some code contributions are explicitly attributed to AI tools: [GitHub Copilot](https://github.com/ProfessorEngineergit/Apps/commit/aff1a32b92ff4876f28d3271cd11dec89119b594). This applies to those contributions, not every file.
